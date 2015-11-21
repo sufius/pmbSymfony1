@@ -406,6 +406,8 @@ class sfWebResponse extends sfResponse
    */
   protected function normalizeHeaderName($name)
   {
+    // changed by sufian abu-rab, darmstadt eberstadt, germany, 21.11.2015
+    // deprecated return preg_replace('/\-(.)/e', "'-'.strtoupper('\\1')", strtr(ucfirst(strtolower($name)), '_', '-'));
     return preg_replace_callback('/\-(.)/', function ($m) { return "'-' . strtoupper($m[1])"; }, strtr(ucfirst(strtolower($name)), '_', '-'));
   }
 
