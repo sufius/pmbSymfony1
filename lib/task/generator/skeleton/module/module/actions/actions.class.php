@@ -17,6 +17,6 @@ class ##MODULE_NAME##Actions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+      // start
   }
 }
