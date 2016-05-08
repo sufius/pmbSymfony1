@@ -453,7 +453,7 @@ class sfFilesystem
    *
    * @return string
    */
-  protected function canonicalizePath($path)
+  public function canonicalizePath($path)
   {
     if (empty($path))
     {
