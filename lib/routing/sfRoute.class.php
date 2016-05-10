@@ -249,6 +249,8 @@ class sfRoute implements Serializable
 
     if ($this->options['extra_parameters_as_query_string'] && !$this->hasStarParameter())
     {
+      // make this working for _dev URLs too
+      $params = is_array($params) ? $params : array($params);
       // add a query string if needed
       if ($extra = array_diff_key($params, $this->variables, $defaults))
       {
