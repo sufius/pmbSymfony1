@@ -118,4 +118,11 @@ class sfInflector
 
     return ucfirst(str_replace('_', ' ', $lower_case_and_underscored_word));
   }
+
+  public static function camelizedToHumanize($lower_case_and_camelcase_word) {
+    $lower_case_and_camelcase_word = preg_replace('/(?<=\\w)(?=[A-Z])/', " $1", $lower_case_and_camelcase_word);
+    $lower_case_and_camelcase_word = trim($lower_case_and_camelcase_word);
+
+    return ucfirst($lower_case_and_camelcase_word);
+  }
 }
